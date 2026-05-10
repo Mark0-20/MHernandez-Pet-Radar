@@ -49,6 +49,7 @@ export function shutdownApplicationInsights(): Promise<void> {
       resolve();
       return;
     }
-    client.flush({ callback: () => resolve() });
+    client.flush();
+    resolve();
   });
 }
